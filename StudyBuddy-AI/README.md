@@ -1,0 +1,46 @@
+# StudyBuddy AI
+
+A beginner-friendly open-source study helper for the Hacktoberfest Weekend Challenge **Build for a Friend**. Turn class notes into summaries, flashcards, quizzes, simple explanations, or a revision plan.
+
+## Features
+- Five study modes: summary, flashcards, quiz, simple explanation, revision plan
+- Study-level choices
+- Responsive UI
+- Copy or save results as text
+- Optional local AI through Ollama and the open `qwen2.5:3b` model
+- Honest error messages if AI is unavailable
+- No account or hosted AI API built in
+
+## Tech stack
+HTML, CSS, vanilla JavaScript, and the Ollama local HTTP API.
+
+## Run it
+1. Download or clone this repository.
+2. Open `index.html` in a browser.
+3. For AI generation, install [Ollama](https://ollama.com/download).
+4. In PowerShell or a terminal, run `ollama pull qwen2.5:3b`.
+5. Ensure Ollama is running (`ollama serve` if needed).
+6. In the page's **Configure local endpoint** section, set endpoint to `http://localhost:11434/api/generate` and model to `qwen2.5:3b`.
+
+**Important:** This is a front-end prototype. Browser cross-origin rules may block a GitHub Pages website from calling localhost. Running the page locally is the most reliable option. Never expose your local Ollama API directly to the public internet.
+
+## Privacy
+By default, the browser sends notes to the Ollama endpoint on your own computer, not to a hosted AI provider. If you change the endpoint, notes are sent there instead. Model outputs can be wrong; verify important facts against your course material.
+
+## Limitations
+- Paste text only; PDF/image import is not implemented.
+- AI generation requires Ollama and a downloaded model.
+- This is a prototype, not a replacement for teachers or official study resources.
+
+## Contribution ideas
+- PDF text import
+- Flip-style flashcards
+- Saved study sessions
+- Subject-specific prompt templates
+- Keyboard accessibility and tests
+
+## Challenge story
+The intended use case is helping a friend who finds long study notes difficult to revise. In your DEV.to submission, describe the real person/problem and their feedback honestly. Don't claim user testing unless it happened.
+
+## License
+MIT. See [LICENSE](LICENSE).
